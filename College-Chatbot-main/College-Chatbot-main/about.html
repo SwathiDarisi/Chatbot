@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About PSCMR College</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" type="text/css" href="about.css">
+  <link rel="stylesheet" type="text/css" href="chatbot.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-container">
+      <button class="mobile-menu-btn" aria-label="Toggle navigation menu">☰</button>
+    </div>
+  </header>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar" aria-label="Main navigation">
+    <ul class="nav-menu" role="menubar">
+      <li class="nav-item"><a href="homepage.html" class="nav-link">Home</a></li>
+      <li class="nav-item dropdown" role="none">
+        <a href="about.html" class="nav-link dropdown-toggle" role="menuitem" aria-haspopup="true" aria-expanded="false">About</a>
+        <div class="dropdown-content">
+          <a href="about.html#about" class="dropdown-item">About the College</a>
+          <a href="about.html#vision-mission" class="dropdown-item">Vision & Mission</a>
+          <a href="about.html#administration" class="dropdown-item">Administration</a>
+          <a href="about.html#placements" class="dropdown-item">Placements</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a href="academics.html" class="nav-link dropdown-toggle">Academics</a>
+        <div class="dropdown-content">
+          <a href="academics.html#dept" class="dropdown-item">Departments</a>
+          <a href="academics.html#programs" class="dropdown-item">Programs Offered</a>
+          <a href="academics.html#calendar" class="dropdown-item">Academic Calendar</a>
+          <a href="academics.html#admission" class="dropdown-item">Admission Details</a>
+        </div>
+      </li>
+      <li class="nav-item"><a href="homepage.html#programs" class="nav-link">Programs</a></li>
+      <li class="nav-item"><a href="homepage.html#campus" class="nav-link">Campus</a></li>
+      <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Chatbot Button -->
+  <button id="open-chatbot" style="position: fixed; bottom: 20px; right: 20px; z-index: 1000; width: 80px; height: 80px;" title="How can I help you?">
+    <!-- <i class="material-icons" style="font-size:30px; text-align: center;">chat</i> -->
+  </button>
+  <div id="chatbot-popup" style="position: fixed; 
+                                 bottom: 110px; 
+                                 right: 20px; 
+                                 background-color: #007bff; 
+                                 margin-right: 3%;
+                                 margin-bottom: 1%;
+                                 color: white; 
+                                 padding: 10px; 
+                                 border-radius: 5px; 
+                                 display: none; 
+                                 z-index: 1000; ">
+    How can I help you?
+  </div>
+
+  <!-- Chatbot Icon -->
+  <div id="chatbot-container" style="display: none; position: fixed; bottom: 80px; right: 20px; width: 500px; height: 500px; z-index: 1000;">
+    <div id="chatbot-header">Campus Bot <button id="close-chatbot">X</button></div>
+    <div id="chatbot-body">
+      <div class="bot-message">
+        Hi there! How can I help you today?
+        <div class="bot-options">
+          <div class="option-box" data-option="Entrance exam">Entrance exam </div>
+          <div class="option-box" data-option="Admissions">Admissions</div>
+          <div class="option-box" data-option="About CSE Department">CSE Department</div>
+          <div class="option-box" data-option="About MCA Department">MCA Department</div>
+          <div class="option-box" data-option="About MBA Department">MBA Department</div>
+          <div class="option-box" data-option="Contact Us">Contact Us</div>
+        </div>
+      </div>
+    </div>
+    <div id="chatbot-footer">
+      <input type="text" placeholder="Type your message..." />
+      <button id="send-message">
+        <i class="fas fa-paper-plane"></i>
+      </button>
+    </div>
+    <button id="scroll-button" style="position: absolute; bottom: 60px; right: 10px; width: 40px; height: 40px; border-radius: 50%; background-color: #007bff; color: white; border: none; cursor: pointer; display: none;">
+      <i class="fas fa-angle-double-down"></i>
+    </button>
+  </div>
+  
+  <!-- Main Section -->
+  <main class="main-content">
+    <aside class="side-nav">
+      <ul>
+        <li><a href="#about" onclick="showSection('about')">About the College</a></li>
+        <li><a href="#vision-mission" onclick="showSection('vision-mission')">Vision & Mission</a></li>
+        <li><a href="#administration" onclick="showSection('administration')">Administration</a></li>
+        <li><a href="#placements" onclick="showSection('placements')">Placements</a></li>
+      </ul>
+    </aside>
+    <section id="about" class="content-section">
+      <h2>About PSCMR College of Technology</h2>
+      <p>PSCMR College is a premier institution dedicated to providing high-quality education, fostering innovation, and nurturing talent. Our college offers a diverse range of undergraduate and postgraduate programs across various disciplines, ensuring that students receive a well-rounded and industry-relevant education.</p>
+      <p><strong>Why Choose Us?</strong></p>
+      <ul>
+        <li>Experienced Faculty: Learn from highly qualified and dedicated educators.</li>
+        <li>Modern Infrastructure: State-of-the-art classrooms, well-equipped labs, and a vast library.</li>
+        <li>Industry Collaboration: Strong partnerships with leading companies for internships and placements.</li>
+        <li>Holistic Development: A perfect blend of academics, research, and extracurricular activities.</li>
+        <li>Student-Centric Approach: A supportive and inclusive learning environment.</li>
+      </ul>
+      <p>Join PSCMR College to embark on a journey of knowledge, growth, and success!</p>
+    </section>
+
+    <section id="vision-mission" class="content-section" style="display:none;">
+      <h2>Vision & Mission</h2>
+      <h3>Vision</h3>
+      <p>To be a leading institution of higher education, fostering academic excellence, innovation, and ethical values, empowering students to become global leaders and responsible citizens.</p>
+      <h3>Mission</h3>
+      <ul>
+        <li>Quality Education: Provide a comprehensive and industry-relevant curriculum to nurture intellectual and professional growth.</li>
+        <li>Innovation & Research: Encourage creativity, critical thinking, and research-driven learning to address real-world challenges.</li>
+        <li>Holistic Development: Promote leadership, teamwork, and ethical values through academics, extracurricular activities, and community engagement.</li>
+        <li>Global Readiness: Equip students with skills and knowledge to excel in a competitive, ever-evolving global landscape.</li>
+        <li>Inclusivity & Sustainability: Foster an inclusive, diverse, and environmentally responsible campus culture.</li>
+      </ul>
+      <p>At PSCMR College, we are committed to shaping future leaders who contribute to society with knowledge, integrity, and innovation.</p>
+    </section>
+
+    <section id="administration" class="content-section" style="display:none;">
+      <h2>Administration</h2>
+      <p>Our administration is dedicated to ensuring a smooth and efficient academic and operational environment. Our leadership team works tirelessly to uphold the college’s vision, foster academic excellence, and create a supportive atmosphere for students, faculty, and staff.</p>
+      <h3>Key Administrative Roles</h3>
+      <ul>
+        <li>Chairperson/President: Provides strategic direction and oversees the institution’s growth and development.</li>
+        <li>Principal/Director: Manages academic and administrative functions, ensuring quality education and institutional progress.</li>
+        <li>Dean (Academics & Research): Supervises curriculum development, research initiatives, and faculty enhancement programs.</li>
+        <li>Registrar: Responsible for student admissions, records, examinations, and compliance with educational policies.</li>
+        <li>Heads of Departments (HODs): Lead academic departments, facilitating teaching, research, and student mentorship.</li>
+        <li>Administrative & Support Staff: Ensure the smooth operation of daily activities, including finance, student services, and campus management.</li>
+      </ul>
+      <p>Our administration is committed maintaining transparency, efficiency, and a student-centric approach to create an enriching academic experience for all.</p>
+    </section>
+
+    <section id="placements" class="content-section" style="display:none;">
+      <h2>Placements</h2>
+      <p>We take pride in our strong placement record, ensuring that students are well-prepared for successful careers in leading industries. Our dedicated Placement Cell works closely with top recruiters to provide excellent job opportunities and internships for our students.</p>
+      <h3>Key Highlights of Our Placement Program</h3>
+      <ul>
+        <li>Top Recruiters: Collaborations with renowned companies across various sectors.</li>
+        <li>Career Guidance: Regular workshops, resume-building sessions, and interview training.</li>
+        <li>Internships & Industry Exposure: Hands-on experience through internships and live projects.</li>
+        <li>Skill Development: Training programs in soft skills, technical expertise, and aptitude.</li>
+        <li>High Placement Rate: A strong track record of students securing jobs in reputed organizations.</li>
+      </ul>
+      <h3>Our Recruiters</h3>
+      <p>We have partnerships with leading multinational corporations, IT firms, finance companies, and core industries. Some of our top recruiters include:</p>
+      <ul>
+        <li>Google</li>
+        <li>Microsoft</li>
+        <li>Amazon</li>
+        <li>Infosys</li>
+        <li>TCS</li>
+      </ul>
+      <p>We are committed to bridging the gap between academia and industry, ensuring our students step into the professional world with confidence and expertise!</p>
+    </section>
+  </main>
+  
+  <!-- Footer -->
+  <footer class="footer-container">
+    <div class="footer-text">
+      <h3>PSCMR College</h3>
+      <p>We are dedicated to nurturing the next generation of engineering talent through innovation, research, and academic excellence.</p>
+    </div>
+    <div class="footer-links">
+      <h3>Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#programs">Programs</a></li>
+        <li><a href="#campus">Campus</a></li>
+        <li><a href="#">Admissions</a></li>
+        <li><a href="#">Alumni</a></li>
+      </ul>
+    </div>
+    <div class="footer-contact">
+      <h3>Contact Us</h3>
+        <p> 123 University Avenue, Tech City</p>
+        <p>(123) 456-7890</p>
+        <p>info@PSCMR College.edu</p>
+    </div>
+    <div class="text-center">
+      &copy; 2025 PSCMR College of Technology. All Rights Reserved.
+    </div>
+    <script src="scripts.js"></script>
+    <script>
+      function showSection(sectionId) {
+        const sections = document.querySelectorAll('.content-section');
+        sections.forEach(section => {
+          section.style.display = 'none';
+        });
+        document.getElementById(sectionId).style.display = 'block';
+      }
+    </script>
+  </footer>
+</body>
+</html>

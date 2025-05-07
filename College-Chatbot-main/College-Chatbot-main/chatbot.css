@@ -1,0 +1,292 @@
+/* Fix image responsiveness */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Chatbot Popup */
+#chatbot-popup {
+    position: fixed;
+    bottom: 110px;
+    right: 20px;
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    display: none;
+    z-index: 1000;
+}
+
+/* Chatbot Button Styling */
+#open-chatbot {
+    position: relative;
+    background-image: url(images/bot.png);
+    background-size: cover; /* Ensures the image covers the entire container */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: wave-effect-1 4s infinite;
+}
+
+#open-chatbot::before,
+#open-chatbot::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: wave-effect-2 4s infinite;
+    z-index: -1;
+}
+
+#open-chatbot::after {
+    animation: wave-effect-3 4s infinite;
+}
+
+@keyframes wave-effect-1 {
+    0% {
+        box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 0 20px rgba(0, 123, 255, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(0, 123, 255, 0);
+    }
+}
+
+@keyframes wave-effect-2 {
+    0% {
+        box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 0 30px rgba(0, 123, 255, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(0, 123, 255, 0);
+    }
+}
+
+
+@keyframes wave-effect-3 {
+    0% {
+        box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 0 40px rgba(0, 123, 255, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(0, 123, 255, 0);
+    }
+}
+
+@keyframes wave-effect-4 {
+    0% {
+        box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.2);
+    }
+    50% {
+        box-shadow: 0 0 0 40px rgba(0, 123, 255, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(0, 123, 255, 0);
+    }
+}
+
+@keyframes wave-effect-5 {
+    0% {
+        box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.1);
+    }
+    50% {
+        box-shadow: 0 0 0 40px rgba(0, 123, 255, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(0, 123, 255, 0);
+    }
+}
+
+/* Chatbot Container Styling */
+#chatbot-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 350px;
+    height: 500px;
+    background-color: #f9f9f9;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+}
+
+#chatbot-header {
+    background-color: #007bff;
+    color: white;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#chatbot-header button {
+    background-color: transparent;
+    color: white;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+#chatbot-body {
+    padding: 15px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: calc(90% - 100px); /* Adjust height to fit within the container */
+    margin-bottom: 50%;
+}
+
+.user-message {
+    background-color: #1a89ff; /* Light grey background for user messages */
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 80%;
+    align-self: flex-end;
+}
+
+.bot-message {
+    background-color: #e0e0e0; /* Slightly lighter grey background for bot messages */
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 80%;
+    height: fit-content;
+    align-self: flex-start;
+}
+
+/* Styles for clickable options inside bot-message */
+.bot-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.option-box {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+    width: auto; /* Adjust width to fit content */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px; /* Add spacing between options */
+}
+
+.bot-options {
+    flex-direction: column; /* Display options vertically */
+    align-items: flex-start; /* Align options to the start */
+}
+
+.option-box:hover {
+    background-color: #0056b3;
+}
+
+#chatbot-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 96%;
+    padding: 10px;
+    background-color: #f1f1f1;
+    display: flex;
+    align-items: center;
+    justify-content: baseline;
+    border-radius: 15px;
+    gap: 10px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+#chatbot-footer input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+#chatbot-footer button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Scroll Button Styling */
+#scroll-button {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    margin-right: 2%;
+    margin-bottom: 2%;
+    font-size: 18px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+#scroll-button i {
+    font-size: 18px;
+}
+
+#scroll-button:hover {
+    background-color: #0056b3;
+}
+
+/* Add prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+/* Add intermediate breakpoint */
+@media (max-width: 992px) {
+    .header-container {
+        padding: 10px 20px;
+    }
+    
+    .college-name {
+        font-size: 32px;
+    }
+    
+    .program-content {
+        width: calc(50% - 40px);
+    }
+}
+
+

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Academics - PSCMR College</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" type="text/css" href="about.css">
+  <link rel="stylesheet" type="text/css" href="chatbot.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-container">
+      <button class="mobile-menu-btn" aria-label="Toggle navigation menu">☰</button>
+    </div>
+  </header>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar" aria-label="Main navigation">
+    <ul class="nav-menu" role="menubar">
+      <li class="nav-item"><a href="homepage.html" class="nav-link">Home</a></li>
+      <li class="nav-item dropdown" role="none">
+        <a href="about.html" class="nav-link dropdown-toggle" role="menuitem" aria-haspopup="true" aria-expanded="false">About</a>
+        <div class="dropdown-content">
+          <a href="about.html#about" class="dropdown-item">About the College</a>
+          <a href="about.html#vision-mission" class="dropdown-item">Vision & Mission</a>
+          <a href="about.html#administration" class="dropdown-item">Administration</a>
+          <a href="about.html#placements" class="dropdown-item">Placements</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a href="academics.html" class="nav-link dropdown-toggle">Academics</a>
+        <div class="dropdown-content">
+          <a href="academics.html#dept" class="dropdown-item">Departments</a>
+          <a href="academics.html#programs" class="dropdown-item">Programs Offered</a>
+          <a href="academics.html#calendar" class="dropdown-item">Academic Calendar</a>
+          <a href="academics.html#admission" class="dropdown-item">Admission Details</a>
+        </div>
+      </li>
+      <li class="nav-item"><a href="homepage.html#programs" class="nav-link">Programs</a></li>
+      <li class="nav-item"><a href="homepage.html#campus" class="nav-link">Campus</a></li>
+      <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+    </ul>
+  </nav>
+  
+  <!-- Chatbot Button -->
+  <button id="open-chatbot" style="position: fixed; bottom: 20px; right: 20px; z-index: 1000; width: 80px; height: 80px;" title="How can I help you?">
+    <!-- <i class="material-icons" style="font-size:30px; text-align: center;">chat</i> -->
+  </button>
+  <div id="chatbot-popup" style="position: fixed; 
+                                 bottom: 110px; 
+                                 right: 20px; 
+                                 background-color: #007bff; 
+                                 margin-right: 3%;
+                                 margin-bottom: 1%;
+                                 color: white; 
+                                 padding: 10px; 
+                                 border-radius: 5px; 
+                                 display: none; 
+                                 z-index: 1000; ">
+    How can I help you?
+  </div>
+
+  <!-- Chatbot Icon -->
+  <div id="chatbot-container" style="display: none; position: fixed; bottom: 80px; right: 20px; width: 500px; height: 500px; z-index: 1000;">
+    <div id="chatbot-header">Campus Bot <button id="close-chatbot">X</button></div>
+    <div id="chatbot-body">
+      <div class="bot-message">
+        Hi there! How can I help you today?
+        <div class="bot-options">
+          <div class="option-box" data-option="Entrance exam">Entrance exam </div>
+          <div class="option-box" data-option="Admissions">Admissions</div>
+          <div class="option-box" data-option="About CSE Department">CSE Department</div>
+          <div class="option-box" data-option="About MCA Department">MCA Department</div>
+          <div class="option-box" data-option="About MBA Department">MBA Department</div>
+          <div class="option-box" data-option="Contact Us">Contact Us</div>
+        </div>
+      </div>
+    </div>
+    <div id="chatbot-footer">
+      <input type="text" placeholder="Type your message..." />
+      <button id="send-message">
+        <i class="fas fa-paper-plane"></i>
+      </button>
+    </div>
+    <button id="scroll-button" style="position: absolute; bottom: 60px; right: 10px; width: 40px; height: 40px; border-radius: 50%; background-color: #007bff; color: white; border: none; cursor: pointer; display: none;">
+      <i class="fas fa-angle-double-down"></i>
+    </button>
+  </div>
+
+  <!-- Main Section -->
+  <main class="main-content">
+    <aside class="side-nav">
+      <ul>
+        <li><a href="#dept" onclick="showSection('dept')">Departments</a></li>
+        <li><a href="#programs" onclick="showSection('programs')">Programs Offered</a></li>
+        <li><a href="#calendar" onclick="showSection('calendar')">Academic Calendar</a></li>
+        <li><a href="#admission" onclick="showSection('admission')">Admission Details</a></li>
+        <li><a href="#faculty" onclick="showSection('faculty')">Faculty Profile</a></li>
+      </ul>
+    </aside>
+    <section id="dept" class="content-section">
+      <h2>Departments</h2>
+      <p>Our college offers a variety of departments to cater to different fields of engineering and technology. Each department is equipped with state-of-the-art facilities and experienced faculty members to provide students with a comprehensive education.</p>
+      <ul>
+        <li><strong>Computer Science & Engineering   
+        </strong> Focuses on software development, artificial intelligence, machine learning, and data science.</li>
+        <li><strong>Mechanical Engineering:</strong> Covers design, manufacturing, thermodynamics, and robotics.</li>
+        <li><strong>Electrical & Electronics Engineering:</strong> Involves the study of power systems, control systems, and communications.</li>
+        <li><strong>Civil Engineering:</strong> Specializes in structural design, transportation, and environmental engineering.</li>
+        <li><strong>Master of Computer Applications (MCA):</strong> Advanced studies in computer applications, software development, and IT management.</li>
+        <li><strong>Master of Business Administration (MBA):</strong> Comprehensive business management education with specializations in finance, marketing, and human resources.</li>
+      </ul>
+    </section>
+    <section id="programs" class="content-section" style="display:none;">
+      <h2>Programs Offered</h2>
+      <p>We offer a range of undergraduate and postgraduate programs designed to provide students with a comprehensive education in their chosen fields. Our programs are designed to combine theoretical knowledge with practical skills, preparing students for successful careers in engineering and technology.</p>
+      <ul>
+        <li><strong>Bachelor of Technology (B.Tech):</strong> A four-year undergraduate program offering specializations in various engineering disciplines.</li>
+        <li><strong>Master of Technology (M.Tech):</strong> A two-year postgraduate program focusing on advanced technical knowledge and research in specific engineering fields.</li>
+        <li><strong>Master of Computer Applications (MCA):</strong> A three-year postgraduate program focusing on advanced studies in computer applications and software development.</li>
+        <li><strong>Master of Business Administration (MBA):</strong> A two-year postgraduate program offering comprehensive business management education with specializations in finance, marketing, and human resources.</li>
+      </ul>
+    </section>
+    <section id="calendar" class="content-section" style="display:none;">
+      <h2>Academic Calendar</h2>
+      <p>Our academic calendar provides important dates and deadlines for the academic year, including the start and end of semesters, examination periods, and holidays. The calendar is designed to help students plan their academic activities and stay on track with their studies.</p>
+      <ul>
+        <li>Start of Semester: January 10, 2025</li>
+        <li>Mid-Semester Examinations: March 15-20, 2025</li>
+        <li>End of Semester Examinations: May 10-20, 2025</li>
+        <li>Summer Break: June 1 - July 15, 2025</li>
+        <li>Start of New Semester: August 1, 2025</li>
+      </ul>
+    </section>
+    <section id="admission" class="content-section" style="display:none;">
+      <h2>Admission Details</h2>
+      <p>Find out more about our admission process, eligibility criteria, and how to apply for our programs. We are committed to providing a transparent and efficient admission process to help prospective students join our institution.</p>
+      <ul>
+        <li><strong>Eligibility Criteria:</strong> Detailed information on the academic qualifications and other requirements needed to apply for our programs.</li>
+        <li><strong>Application Process:</strong> Step-by-step guide on how to apply for admission, including the necessary documents and deadlines.</li>
+        <li><strong>Important Dates:</strong> Key dates and deadlines for the admission process, including application submission, entrance exams, and result announcements.</li>
+        <li><strong>Contact Information:</strong> Contact details for our admission office, where prospective students can get assistance and answers to their queries.</li>
+      </ul>
+      <h3>Eligibility Criteria for Admission</h3>
+      <ul class="course-list">
+        <li><a href="#" onclick="showCriteria('btech')">Bachelor of Technology (B.Tech)</a></li>
+        <li><a href="#" onclick="showCriteria('mca')">Master of Computer Applications (MCA)</a></li>
+        <li><a href="#" onclick="showCriteria('mba')">Master of Business Administration (MBA)</a></li>
+      </ul>
+      <div id="btech" class="course-criteria" style="display:none;">
+        <h4>Bachelor of Technology (B.Tech)</h4>
+        <p><strong>Duration:</strong> 4 Years</p>
+        <p><strong>Eligibility:</strong></p>
+        <ul>
+          <li>Must have completed 10+2 (or equivalent) with Physics, Chemistry, and Mathematics (PCM) as core subjects.</li>
+          <li>A minimum aggregate of 50% marks (may vary based on category and college policies).</li>
+          <li>Admission through national/state-level entrance exams (such as JEE Main or other recognized entrance tests).</li>
+        </ul>
+      </div>
+      <div id="mca" class="course-criteria" style="display:none;">
+        <h4>Master of Computer Applications (MCA)</h4>
+        <p><strong>Duration:</strong> 2 Years</p>
+        <p><strong>Eligibility:</strong></p>
+        <ul>
+          <li>Bachelor’s degree (BCA/B.Sc. (IT/CS)/B.Tech or any equivalent degree) with Mathematics as a subject at 10+2 or graduation level.</li>
+          <li>A minimum aggregate of 50% marks in the qualifying degree (may vary).</li>
+          <li>Admission through national/state-level entrance exams (such as NIMCET or other recognized entrance tests).</li>
+        </ul>
+      </div>
+      <div id="mba" class="course-criteria" style="display:none;">
+        <h4>Master of Business Administration (MBA)</h4>
+        <p><strong>Duration:</strong> 2 Years</p>
+        <p><strong>Eligibility:</strong></p>
+        <ul>
+          <li>Bachelor’s degree in any discipline from a recognized university.</li>
+          <li>A minimum aggregate of 50% marks in graduation (may vary based on category and institution norms).</li>
+          <li>Admission through national/state-level entrance exams (such as CAT, MAT, XAT, or institution-specific entrance tests).</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+  
+  <!-- Footer -->
+  <footer class="footer-container">
+    <div class="footer-text">
+        <h3>PSCMR College</h3>
+        <p>We are dedicated to nurturing the next generation of engineering talent through innovation, research, and academic excellence.</p>
+    </div>
+    <div class="footer-links">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#programs">Programs</a></li>
+          <li><a href="#campus">Campus</a></li>
+          <li><a href="#">Admissions</a></li>
+          <li><a href="#">Alumni</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h3>Contact Us</h3>
+        <p> 123 University Avenue, Tech City</p>
+        <p>(123) 456-7890</p>
+        <p>info@PSCMR College.edu</p>
+          </div>
+    <div class="text-center">
+      &copy; 2025 PSCMR College of Technology. All Rights Reserved.
+    </div>
+  </footer>
+
+  <script src="scripts.js"></script>
+  <script>
+    function showSection(sectionId) {
+      const sections = document.querySelectorAll('.content-section');
+      sections.forEach(section => {
+        section.style.display = 'none';
+      });
+      document.getElementById(sectionId).style.display = 'block';
+    }
+
+    function showCriteria(criteriaId) {
+      const criteria = document.querySelectorAll('.course-criteria');
+      criteria.forEach(item => {
+        item.style.display = 'none';
+      });
+      document.getElementById(criteriaId).style.display = 'block';
+    }
+  </script>
+</body>
+</html>
